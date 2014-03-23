@@ -15,8 +15,11 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  raise TriangleError,"No side can be negative or Zero" if ([a,b,c].min<=0)
+  x, y, z = [a,b,c].sort
+  raise TriangleError if x + y <= z
+
   if((a==b)&& (a==c))
-    raise TriangleError if(a==0)
     :equilateral
   else
     if((a==b) || (a==c) || (b==c))
